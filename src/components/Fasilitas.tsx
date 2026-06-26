@@ -99,17 +99,17 @@ export default function Fasilitas() {
   const formattedIndex = `${String(current + 1).padStart(2, "0")}/${String(SLIDES.length).padStart(2, "0")}`;
 
   return (
-    <section id="fasilitas" className="relative w-full bg-white px-6 pb-12 select-none overflow-hidden">
+    <section id="fasilitas" className="relative w-full bg-white px-6 py-6 select-none overflow-hidden" style={{ height: "100vh", minHeight: "600px", maxHeight: "800px" }}>
       
       {/* Centered lines wrapper */}
-      <div className="absolute inset-y-0 left-6 right-6 md:left-12 md:right-12 max-w-[1240px] mx-auto pointer-events-none hidden xl:block z-0">
+      <div className="absolute inset-y-0 left-6 right-6 max-w-[1240px] mx-auto pointer-events-none hidden xl:block z-0">
         <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-gray-200/60" />
         <div className="absolute left-[124px] top-0 bottom-0 w-[1px] bg-gray-200/60" />
       </div>
 
-      <div className="relative z-10 w-full">
-        {/* Main Banner Card (Full Width matching Hero / Mengapa Memilih - Taller height at h-[500px] md:h-[650px]) */}
-        <div className="w-full h-[500px] md:h-[650px] rounded-[2.5rem] overflow-hidden relative border border-zinc-200/70 shadow-2xl bg-zinc-950">
+      <div className="relative z-10 w-full h-full">
+        {/* Main Banner Card (Full Width matching Hero / Mengapa Memilih) */}
+        <div className="w-full h-full rounded-[2.5rem] overflow-hidden relative border border-zinc-200/70 shadow-2xl bg-zinc-950">
           
           {/* Background Slide Image with Fade Animation */}
           {SLIDES.map((slide, idx) => (

@@ -2,10 +2,10 @@
 
 export default function Alumni() {
   return (
-    <section id="alumni" className="relative w-full bg-white py-24 px-6 md:px-12 select-none overflow-hidden border-t border-gray-100">
+    <section id="alumni" className="relative w-full bg-white py-24 px-6 select-none overflow-hidden border-t border-gray-100">
       
       {/* Centered lines wrapper - runs from top to bottom of section and stays locked to content coordinates */}
-      <div className="absolute inset-y-0 left-6 right-6 md:left-12 md:right-12 max-w-[1240px] mx-auto pointer-events-none hidden xl:block z-0">
+      <div className="absolute inset-y-0 left-6 right-6 max-w-[1240px] mx-auto pointer-events-none hidden xl:block z-0">
         {/* Left vertical line (aligned with left edge of global layout) */}
         <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-gray-200/60" />
         

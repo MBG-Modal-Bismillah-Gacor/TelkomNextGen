@@ -1,23 +1,25 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Jurusan from "@/components/Jurusan";
+import AboutUs from "@/components/AboutUs";
 import MengapaMemilih from "@/components/MengapaMemilih";
 import ProgramSekolah from "@/components/ProgramSekolah";
 import Fasilitas from "@/components/Fasilitas";
 import Alumni from "@/components/Alumni";
+import Jurusan from "@/components/Jurusan";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-white overflow-x-hidden selection:bg-telkom-red selection:text-white">
+    <div className="flex flex-col min-h-screen bg-white selection:bg-telkom-red selection:text-white">
       <Navbar />
       <main className="flex-grow">
         <Hero />
-        <Jurusan />
+        <AboutUs />
         <MengapaMemilih />
         <ProgramSekolah />
         <Fasilitas />
         <Alumni />
+        <Jurusan />
       </main>
       <Footer />
     </div>

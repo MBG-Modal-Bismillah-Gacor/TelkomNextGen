@@ -2,10 +2,10 @@
 
 export default function MengapaMemilih() {
   return (
-    <section id="mengapa-memilih" className="relative w-full bg-white px-6 pb-12 select-none overflow-hidden">
+    <section id="mengapa-memilih" className="relative w-full bg-white px-6 py-6 select-none overflow-hidden" style={{ height: "100vh", minHeight: "600px", maxHeight: "800px" }}>
       
       {/* Centered lines wrapper - runs from top to bottom of section and stays locked to content coordinates */}
-      <div className="absolute inset-y-0 left-6 right-6 md:left-12 md:right-12 max-w-[1240px] mx-auto pointer-events-none hidden xl:block z-0">
+      <div className="absolute inset-y-0 left-6 right-6 max-w-[1240px] mx-auto pointer-events-none hidden xl:block z-0">
         {/* Left vertical line (aligned with left edge of global layout) */}
         <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-gray-200/60" />
         
@@ -13,9 +13,9 @@ export default function MengapaMemilih() {
         <div className="absolute left-[124px] top-0 bottom-0 w-[1px] bg-gray-200/60" />
       </div>
 
-      <div className="relative z-10 w-full">
-        {/* Giant Black Container Card - pt-16 px-16 pb-36 for spacious design */}
-        <div className="w-full bg-[#08090b] border border-zinc-900 rounded-[2.5rem] pt-8 md:pt-12 lg:pt-16 px-8 md:px-12 lg:px-16 pb-20 md:pb-28 lg:pb-36 shadow-2xl relative overflow-hidden">
+      <div className="relative z-10 w-full h-full">
+        {/* Giant Black Container Card - styled to match Hero height */}
+        <div className="w-full h-full bg-[#08090b] border border-zinc-900 rounded-[2.5rem] p-8 md:p-12 lg:p-16 shadow-2xl relative overflow-hidden flex items-center">
           
           {/* Inner content wrapper to keep text/cards aligned with the global page layout constraints */}
           <div className="max-w-[1240px] mx-auto w-full">
