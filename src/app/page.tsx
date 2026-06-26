@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Jurusan from "@/components/Jurusan";
+import MengapaMemilih from "@/components/MengapaMemilih";
 import WallOfFame from "@/components/WallOfFame";
 import Alumni from "@/components/Alumni";
 import VirtualTour from "@/components/VirtualTour";
@@ -13,6 +14,7 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <Jurusan />
+        <MengapaMemilih />
         <WallOfFame />
         <Alumni />
         <VirtualTour />
