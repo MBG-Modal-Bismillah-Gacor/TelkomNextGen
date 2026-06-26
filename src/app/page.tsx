@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Jurusan from "@/components/Jurusan";
 import MengapaMemilih from "@/components/MengapaMemilih";
 import ProgramSekolah from "@/components/ProgramSekolah";
+import Fasilitas from "@/components/Fasilitas";
 import WallOfFame from "@/components/WallOfFame";
 import Alumni from "@/components/Alumni";
 import VirtualTour from "@/components/VirtualTour";
@@ -17,6 +18,7 @@ export default function Home() {
         <Jurusan />
         <MengapaMemilih />
         <ProgramSekolah />
+        <Fasilitas />
         <WallOfFame />
         <Alumni />
         <VirtualTour />
