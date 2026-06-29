@@ -19,7 +19,7 @@ export default function Hero() {
         />
 
         {/* Layer 2: Massive "SMK TELKOM" Title (Sandwiched behind the foreground building) */}
-        <div className="absolute top-10 inset-x-0 flex items-start justify-center pointer-events-none z-10">
+        <div className="absolute top-10 inset-x-0 flex items-start justify-center pointer-events-none z-30 sm:z-10">
           <h1
             className="font-black text-center uppercase tracking-tight select-none bg-gradient-to-b from-white/20 via-white/80 to-white bg-clip-text text-transparent drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)]"
             style={{
@@ -36,7 +36,7 @@ export default function Hero() {
         <img
           src="/smktelkom.png"
           alt="Gedung SMK Telkom Purwokerto Foreground"
-          className="absolute inset-0 w-full h-full object-cover object-[center_35%] filter contrast-[1.06] brightness-[1.02] pointer-events-none z-20"
+          className="absolute inset-0 w-full h-full object-cover object-[center_35%] filter contrast-[1.06] brightness-[1.02] pointer-events-none z-20 hidden sm:block"
           style={{
             imageRendering: "auto",
             clipPath: "polygon(0% 39.5%, 33.3% 32.2%, 33.3% 27%, 66.7% 27%, 66.7% 32.2%, 100% 39.5%, 100% 100%, 0% 100%)"
@@ -48,32 +48,27 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/5 pointer-events-none z-20" />
 
         {/* ===== TOP LEFT: "1200+ Siswa" Badge ===== */}
-        <div className="absolute top-10 left-10 z-30">
-          <div className="border border-white/40 bg-white/10 backdrop-blur-md rounded-[6px] px-5 py-2">
-            <span className="text-[13px] sm:text-[14px] font-medium text-white tracking-wider">
+        <div className="absolute top-4 left-4 sm:top-10 sm:left-10 z-30">
+          <div className="border border-white/40 bg-white/10 backdrop-blur-md rounded-[6px] px-3 py-1 sm:px-5 sm:py-2">
+            <span className="text-[10px] sm:text-[14px] font-medium text-white tracking-wider">
               1200+ Siswa
             </span>
           </div>
         </div>
 
         {/* ===== TOP RIGHT: "4 Jurusan" Badge ===== */}
-        <div className="absolute top-10 right-10 z-30">
-          <div className="border border-white/40 bg-white/10 backdrop-blur-md rounded-[6px] px-5 py-2">
-            <span className="text-[13px] sm:text-[14px] font-medium text-white tracking-wider">
+        <div className="absolute top-4 right-4 sm:top-10 sm:right-10 z-30">
+          <div className="border border-white/40 bg-white/10 backdrop-blur-md rounded-[6px] px-3 py-1 sm:px-5 sm:py-2">
+            <span className="text-[10px] sm:text-[14px] font-medium text-white tracking-wider">
               4 Jurusan
             </span>
           </div>
         </div>
 
-        {/* ===== "2026" Text Overlay ===== */}
-        <div className="absolute left-[24%] top-[39%] z-30 pointer-events-none">
-          <span className="text-zinc-800/80 font-bold text-xl sm:text-2xl tracking-wide font-mono">
-            2026
-          </span>
-        </div>
+       
 
         {/* ===== Bottom Canopy Area Buttons (Premium Glassmorphism + Micro-animations & Icons) ===== */}
-        <div className="absolute bottom-[22%] left-1/2 -translate-x-1/2 z-30 flex items-center justify-center gap-4">
+        <div className="absolute bottom-[22%] left-1/2 -translate-x-1/2 z-30 flex items-center justify-center gap-3 sm:gap-4 w-full px-6 flex-wrap sm:flex-nowrap">
 
           {/* Virtual Tour Button */}
           <a

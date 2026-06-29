@@ -125,6 +125,19 @@ export default function MitraPrestasi() {
         <div className="absolute left-[124px] top-0 bottom-0 w-[1px] bg-gray-200/60" />
       </div>
 
+      {/* ── BACKGROUND MOTIFS ── */}
+      {/* Soft Red Ambient Glow */}
+      <div className="absolute bottom-[-10%] left-[-10%] w-[550px] h-[550px] rounded-full bg-[#ED1C24]/[0.07] blur-[140px] pointer-events-none z-0" />
+      
+
+
+      {/* Tech Orbit / Concentric Circles (Network motif behind card stack) */}
+      <div className="absolute top-[35%] left-[5%] w-[460px] h-[460px] border border-zinc-200/30 rounded-full pointer-events-none z-0 flex items-center justify-center opacity-80">
+        <div className="w-[320px] h-[320px] border border-zinc-200/20 rounded-full flex items-center justify-center">
+          <div className="w-[180px] h-[180px] border border-zinc-200/15 rounded-full" />
+        </div>
+      </div>
+
       <div className="max-w-[1240px] mx-auto relative z-10 flex flex-col gap-16">
 
         {/* ── SECTION 1: HUBUNGAN INDUSTRI (MARQUEE ONLY) ── */}

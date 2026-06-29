@@ -249,6 +249,19 @@ export default function Jurusan() {
   return (
     <section id="jurusan" className="relative w-full bg-white pt-24 pb-12 px-6 select-none border-t border-gray-100 overflow-visible">
       
+      {/* Dynamic responsive sticky styling */}
+      <style>{`
+        .sticky-card-jurusan {
+          position: relative;
+        }
+        @media (min-width: 1024px) {
+          .sticky-card-jurusan {
+            position: sticky;
+            top: 110px;
+          }
+        }
+      `}</style>
+      
       {/* Centered vertical lines running from top to bottom of section */}
       <div className="absolute inset-y-0 left-6 right-6 max-w-[1240px] mx-auto pointer-events-none hidden xl:block z-0">
         {/* Left vertical line */}
@@ -292,15 +305,14 @@ export default function Jurusan() {
             return (
               <div
                 key={major.id}
-                className="sticky w-full bg-white border border-zinc-200/90 shadow-[0_12px_40px_rgba(0,0,0,0.04)] rounded-[32px] p-8 md:p-12 lg:p-14 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center transition-all duration-300"
+                className="sticky-card-jurusan w-full bg-white border border-zinc-200/90 shadow-[0_12px_40px_rgba(0,0,0,0.04)] rounded-[32px] p-6 sm:p-8 md:p-12 lg:p-14 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center transition-all duration-300"
                 style={{
-                  top: "110px", // Sticks below the floating navbar, allowing the bottom card to slide over and cover the top card
                   zIndex: 10 + index,
                 }}
               >
                 
-                {/* LEFT COLUMN: Subjects Learned (Grid Span: 5) */}
-                <div className="lg:col-span-4 flex flex-col gap-6">
+                {/* LEFT COLUMN: Subjects Learned (Grid Span: 5) - Order 2 on mobile */}
+                <div className="lg:col-span-4 flex flex-col gap-6 order-2 lg:order-1">
                   <h3 className="text-zinc-900 text-[17px] font-extrabold tracking-tight">
                     Apa saja yang di <span className="text-[#ED1C24]">pelajari</span>?
                   </h3>
@@ -326,15 +338,15 @@ export default function Jurusan() {
                   </div>
                 </div>
 
-                {/* CENTER COLUMN: Phone Mockup Frame (Grid Span: 3) */}
-                <div className="lg:col-span-4 flex justify-center items-center">
+                {/* CENTER COLUMN: Phone Mockup Frame (Grid Span: 3) - Order 3 on mobile */}
+                <div className="lg:col-span-4 flex justify-center items-center order-3 lg:order-2">
                   <div className="w-[260px] h-[440px] xl:w-[290px] xl:h-[490px] bg-zinc-950 border-[8px] border-zinc-900 rounded-[36px] shadow-2xl relative overflow-hidden flex flex-col flex-shrink-0">
                     <CardVisual type={major.visualType} imgUrl={major.imgUrl} />
                   </div>
                 </div>
 
-                {/* RIGHT COLUMN: Major details and Career list (Grid Span: 4) */}
-                <div className="lg:col-span-4 flex flex-col gap-6 lg:pl-4">
+                {/* RIGHT COLUMN: Major details and Career list (Grid Span: 4) - Order 1 on mobile */}
+                <div className="lg:col-span-4 flex flex-col gap-6 lg:pl-4 order-1 lg:order-3">
                   
                   {/* Header & Description */}
                   <div className="space-y-3">

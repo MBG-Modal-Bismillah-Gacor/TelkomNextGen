@@ -2,7 +2,7 @@
 
 export default function MengapaMemilih() {
   return (
-    <section id="mengapa-memilih" className="relative w-full bg-white px-6 py-6 select-none overflow-hidden" style={{ height: "100vh", minHeight: "600px", maxHeight: "800px" }}>
+    <section id="mengapa-memilih" className="relative w-full bg-white px-6 py-6 select-none overflow-hidden h-auto lg:h-screen lg:min-h-[600px] lg:max-h-[800px]">
       
       {/* Centered lines wrapper - runs from top to bottom of section and stays locked to content coordinates */}
       <div className="absolute inset-y-0 left-6 right-6 max-w-[1240px] mx-auto pointer-events-none hidden xl:block z-0">
@@ -13,9 +13,9 @@ export default function MengapaMemilih() {
         <div className="absolute left-[124px] top-0 bottom-0 w-[1px] bg-gray-200/60" />
       </div>
 
-      <div className="relative z-10 w-full h-full">
+      <div className="relative z-10 w-full h-auto lg:h-full">
         {/* Giant Black Container Card - styled to match Hero height */}
-        <div className="w-full h-full bg-[#08090b] border border-zinc-900 rounded-[28px] p-8 md:p-12 lg:p-16 shadow-2xl relative overflow-hidden flex items-center">
+        <div className="w-full h-auto lg:h-full bg-[#08090b] border border-zinc-900 rounded-[28px] p-6 sm:p-8 md:p-12 lg:p-16 shadow-2xl relative overflow-hidden flex items-center py-12 lg:py-16">
           
           {/* Inner content wrapper to keep text/cards aligned with the global page layout constraints */}
           <div className="max-w-[1240px] mx-auto w-full">

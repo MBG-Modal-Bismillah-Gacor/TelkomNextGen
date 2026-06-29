@@ -99,7 +99,7 @@ export default function Fasilitas() {
   const formattedIndex = `${String(current + 1).padStart(2, "0")}/${String(SLIDES.length).padStart(2, "0")}`;
 
   return (
-    <section id="fasilitas" className="relative w-full bg-white px-6 py-6 select-none overflow-hidden" style={{ height: "100vh", minHeight: "600px", maxHeight: "800px" }}>
+    <section id="fasilitas" className="relative w-full bg-white px-6 py-6 select-none overflow-hidden h-auto lg:h-screen lg:min-h-[600px] lg:max-h-[800px]">
       
       {/* Centered lines wrapper */}
       <div className="absolute inset-y-0 left-6 right-6 max-w-[1240px] mx-auto pointer-events-none hidden xl:block z-0">
@@ -107,7 +107,7 @@ export default function Fasilitas() {
         <div className="absolute left-[124px] top-0 bottom-0 w-[1px] bg-gray-200/60" />
       </div>
 
-      <div className="relative z-10 w-full h-full">
+      <div className="relative z-10 w-full h-[520px] lg:h-full">
         {/* Main Banner Card (Full Width matching Hero / Mengapa Memilih) */}
         <div className="w-full h-full rounded-[28px] overflow-hidden relative border border-zinc-200/70 shadow-2xl bg-zinc-950">
           
@@ -155,14 +155,14 @@ export default function Fasilitas() {
           </button>
 
           {/* Content Layout Container (Uses absolute coordinates matching the lines container for perfect alignment) */}
-          <div className="absolute inset-x-8 md:inset-x-14 lg:inset-x-16 top-10 md:top-14 bottom-24 z-30 flex flex-col justify-between max-w-[1240px] mx-auto w-full pointer-events-none">
+          <div className="absolute left-6 right-6 md:left-14 md:right-14 lg:left-16 lg:right-16 top-8 md:top-14 bottom-24 z-30 flex flex-col justify-between max-w-[1240px] mx-auto pointer-events-none">
             
             {/* Top Row: Tagline & Left Description */}
             <div className="flex flex-col gap-2 max-w-2xl">
               <span className="text-zinc-400 text-xs md:text-sm font-semibold tracking-widest uppercase">
                 {activeSlide.tagline}
               </span>
-              <p className="text-white text-base sm:text-lg lg:text-[22px] font-medium leading-relaxed">
+              <p className="text-white text-xs sm:text-base lg:text-[20px] font-medium leading-relaxed pr-6 md:pr-0">
                 {activeSlide.desc}
               </p>
             </div>
@@ -182,7 +182,7 @@ export default function Fasilitas() {
               <span className="text-white text-2xl sm:text-3xl lg:text-[38px] font-bold font-mono tracking-wider leading-none">
                 {formattedIndex}
               </span>
-              <h3 className="text-[52px] sm:text-[75px] lg:text-[105px] font-black uppercase tracking-tight leading-none bg-gradient-to-b from-white via-white to-white/10 bg-clip-text text-transparent">
+              <h3 className="text-[34px] xs:text-[44px] sm:text-[75px] lg:text-[105px] font-black uppercase tracking-tight leading-none bg-gradient-to-b from-white via-white to-white/10 bg-clip-text text-transparent">
                 {activeSlide.name}
               </h3>
             </div>
@@ -190,7 +190,7 @@ export default function Fasilitas() {
           </div>
 
           {/* Bottom Segment Line Indicators - Perfectly aligned with the left edge of the text above */}
-          <div className="absolute bottom-8 inset-x-8 md:inset-x-14 lg:inset-x-16 z-30 flex items-center gap-4 max-w-[1240px] mx-auto w-full">
+          <div className="absolute bottom-8 left-6 right-6 md:left-14 md:right-14 lg:left-16 lg:right-16 z-30 flex items-center gap-4 max-w-[1240px] mx-auto">
             {SLIDES.map((slide, idx) => (
               <button
                 key={slide.id}

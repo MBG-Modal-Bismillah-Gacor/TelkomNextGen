@@ -8,13 +8,21 @@ export default function AboutUs() {
     <section id="about" className="relative w-full bg-white py-20 px-6 select-none border-t border-gray-100 overflow-hidden">
       
       {/* Centered lines wrapper - runs from top to bottom of section and stays locked to content coordinates */}
-      <div className="absolute inset-y-0 left-6 right-6 max-w-[1240px] mx-auto pointer-events-none hidden xl:block">
+      <div className="absolute inset-y-0 left-6 right-6 max-w-[1240px] mx-auto pointer-events-none hidden xl:block z-0">
         {/* Left vertical line (aligned with left edge of RPL/TKJ boxes) */}
         <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-gray-200/60" />
         
         {/* Middle vertical line (aligned right between the columns of the 2x2 grid) */}
         <div className="absolute left-[124px] top-0 bottom-0 w-[1px] bg-gray-200/60" />
       </div>
+
+      {/* ── BACKGROUND MOTIFS ── */}
+      {/* Soft Red Ambient Glow */}
+      <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#ED1C24]/[0.07] blur-[130px] pointer-events-none z-0" />
+      
+
+
+
 
       <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start relative z-10">
         

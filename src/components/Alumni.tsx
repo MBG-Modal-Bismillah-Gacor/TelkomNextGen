@@ -4,13 +4,26 @@ export default function Alumni() {
   return (
     <section id="alumni" className="relative w-full bg-white py-24 px-6 select-none overflow-hidden border-t border-gray-100">
       
-      {/* Centered lines wrapper - runs from top to bottom of section and stays locked to content coordinates */}
+      {/* Vertical grid lines */}
       <div className="absolute inset-y-0 left-6 right-6 max-w-[1240px] mx-auto pointer-events-none hidden xl:block z-0">
         {/* Left vertical line (aligned with left edge of global layout) */}
         <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-gray-200/60" />
         
         {/* Middle vertical line (124px offset) */}
         <div className="absolute left-[124px] top-0 bottom-0 w-[1px] bg-gray-200/60" />
+      </div>
+
+      {/* ── BACKGROUND MOTIFS ── */}
+      {/* Soft Red Ambient Glow */}
+      <div className="absolute top-[20%] right-[10%] w-[450px] h-[450px] rounded-full bg-[#ED1C24]/[0.07] blur-[120px] pointer-events-none z-0" />
+      
+
+
+      {/* Tech Orbit / Concentric Circles (Network motif representing "Mendunia") */}
+      <div className="absolute top-[15%] right-[-5%] w-[420px] h-[420px] border border-zinc-200/40 rounded-full pointer-events-none z-0 flex items-center justify-center opacity-70">
+        <div className="w-[300px] h-[300px] border border-zinc-200/30 rounded-full flex items-center justify-center">
+          <div className="w-[180px] h-[180px] border border-zinc-200/20 rounded-full" />
+        </div>
       </div>
 
       <div className="max-w-[1240px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
