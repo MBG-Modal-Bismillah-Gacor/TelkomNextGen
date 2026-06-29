@@ -74,7 +74,7 @@ export default function Navbar() {
           {/* Right: PPDB + Mobile toggle */}
           <div className="flex-shrink-0 flex items-center gap-4">
             <a
-              href="#"
+              href="/ppdb"
               className="hidden lg:flex items-center bg-[#ED1C24] hover:bg-[#C8161D] text-white rounded-[6px] h-[38px] pl-5 pr-1.5 gap-2.5 transition-all hover:shadow-md active:scale-95 w-max uppercase"
             >
               <span className="text-[11.5px] font-bold tracking-wider">PPDB 2027</span>
@@ -113,7 +113,7 @@ export default function Navbar() {
           ))}
         </div>
         <a
-          href="#"
+          href="/ppdb"
           onClick={() => setIsOpen(false)}
           className="mt-4 w-full flex items-center justify-center bg-[#ED1C24] hover:bg-[#C8161D] text-white rounded-[6px] h-[44px] gap-2.5 transition-all hover:shadow-md active:scale-95 uppercase"
         >
