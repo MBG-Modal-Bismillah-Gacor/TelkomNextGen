@@ -125,7 +125,7 @@ export default function MitraPrestasi() {
         <div className="absolute left-[124px] top-0 bottom-0 w-[1px] bg-gray-200/60" />
       </div>
 
-      <div className="max-w-[1240px] mx-auto relative z-10 flex flex-col gap-24">
+      <div className="max-w-[1240px] mx-auto relative z-10 flex flex-col gap-16">
 
         {/* ── SECTION 1: HUBUNGAN INDUSTRI (MARQUEE ONLY) ── */}
         <div className="flex flex-col items-center w-full">
@@ -145,6 +145,37 @@ export default function MitraPrestasi() {
             }
             .animate-marquee-custom:hover {
               animation-play-state: paused;
+            }
+            .card-slot-center {
+              transform: translate3d(-50%, 0px, 0px) scale(1) rotate(0deg);
+              z-index: 30;
+              opacity: 1;
+            }
+            .card-slot-left {
+              transform: translate3d(calc(-50% - 70px), 12px, 0px) scale(0.88) rotate(-3deg);
+              z-index: 20;
+              opacity: 0.65;
+            }
+            .card-slot-right {
+              transform: translate3d(calc(-50% + 70px), 12px, 0px) scale(0.88) rotate(3deg);
+              z-index: 20;
+              opacity: 0.65;
+            }
+            @media (min-width: 640px) {
+              .card-slot-left {
+                transform: translate3d(calc(-50% - 140px), 12px, 0px) scale(0.88) rotate(-3deg);
+              }
+              .card-slot-right {
+                transform: translate3d(calc(-50% + 140px), 12px, 0px) scale(0.88) rotate(3deg);
+              }
+            }
+            @media (min-width: 768px) {
+              .card-slot-left {
+                transform: translate3d(calc(-50% - 210px), 12px, 0px) scale(0.88) rotate(-3deg);
+              }
+              .card-slot-right {
+                transform: translate3d(calc(-50% + 210px), 12px, 0px) scale(0.88) rotate(3deg);
+              }
             }
           `}</style>
 
@@ -173,16 +204,16 @@ export default function MitraPrestasi() {
         </div>
 
         {/* ── SECTION 2: PRESTASI SLIDER ── */}
-        <div className="flex flex-col items-center relative">
+        <div className="flex flex-col items-center relative w-full">
           <span className="text-zinc-400 text-[11.5px] font-bold uppercase tracking-widest block mb-3">
             Prestasi
           </span>
-          <h2 className="text-[28px] sm:text-[34px] lg:text-[40px] font-black text-zinc-900 leading-tight tracking-tight uppercase mb-16">
+          <h2 className="text-[28px] sm:text-[34px] lg:text-[40px] font-black text-zinc-900 leading-tight tracking-tight uppercase mb-8">
             Bukti Kualitas Talenta Muda
           </h2>
 
-          {/* Slider Container */}
-          <div className="relative w-full max-w-[1240px] flex items-center justify-center px-4 md:px-16 min-h-[460px]">
+          {/* Slider Container with Horizontal Overlapping Stack */}
+          <div className="relative w-full max-w-[1240px] flex items-center justify-center min-h-[500px] overflow-visible mt-6">
 
             {/* Left Button */}
             <button
@@ -192,21 +223,39 @@ export default function MitraPrestasi() {
               <ChevronLeft className="w-6 h-6 stroke-[2.5]" />
             </button>
 
-            {/* Cards Viewport */}
-            <div className="flex items-center justify-center gap-6 w-full overflow-visible relative py-6">
+            {/* Cards Horizontal Stack Viewport */}
+            <div className="relative w-full max-w-[900px] h-[450px] overflow-visible">
               {getOrderedItems().map((item) => {
                 const isCenter = item.position === 0;
+                const isLeft = item.position === -1;
+                const isRight = item.position === 1;
+
+                let positionClass = "";
+                let pointerEvents: "auto" | "none" = "none";
+                let activeShadowClass = "";
+
+                if (isCenter) {
+                  positionClass = "card-slot-center";
+                  pointerEvents = "auto";
+                  activeShadowClass = "shadow-[0_20px_50px_rgba(0,0,0,0.12)] border-zinc-300";
+                } else if (isLeft) {
+                  positionClass = "card-slot-left";
+                  pointerEvents = "none";
+                  activeShadowClass = "blur-[0.5px]";
+                } else if (isRight) {
+                  positionClass = "card-slot-right";
+                  pointerEvents = "none";
+                  activeShadowClass = "blur-[0.5px]";
+                }
 
                 return (
                   <div
                     key={item.id}
-                    className={`bg-white rounded-[24px] overflow-hidden border border-zinc-200/80 flex flex-col transition-all duration-500 w-full max-w-[340px] sm:max-w-[360px] md:max-w-[370px] ${isCenter
-                        ? "shadow-[0_20px_50px_rgba(0,0,0,0.12)] scale-100 z-20 border-zinc-300"
-                        : "opacity-40 scale-90 blur-[1px] hidden sm:flex z-10 pointer-events-none"
-                      }`}
+                    className={`absolute top-0 left-1/2 w-full max-w-[340px] sm:max-w-[370px] h-[420px] bg-white rounded-[24px] overflow-hidden border border-zinc-200/80 flex flex-col transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${positionClass} ${activeShadowClass}`}
+                    style={{ pointerEvents }}
                   >
                     {/* Image Area */}
-                    <div className="relative h-48 w-full overflow-hidden bg-zinc-100 flex-shrink-0">
+                    <div className="relative h-44 w-full overflow-hidden bg-zinc-100 flex-shrink-0">
                       <img
                         src={item.imgUrl}
                         alt={item.title}
@@ -227,31 +276,31 @@ export default function MitraPrestasi() {
                     </div>
 
                     {/* Content Box */}
-                    <div className="p-6 md:p-7 flex flex-col justify-between flex-grow min-h-[220px]">
-                      <div className="space-y-4">
+                    <div className="p-6 flex flex-col justify-between flex-grow">
+                      <div className="space-y-3">
                         {/* Date */}
                         <span className="text-[11px] text-zinc-400 font-bold tracking-wider block">
                           {item.date}
                         </span>
 
                         {/* Title */}
-                        <h3 className="text-zinc-950 text-[18px] sm:text-[20px] font-black leading-tight tracking-tight uppercase">
+                        <h3 className="text-zinc-950 text-[17px] font-black leading-tight tracking-tight uppercase line-clamp-1">
                           {item.title}
                         </h3>
 
                         {/* Bullet achievements */}
-                        <ul className="space-y-2">
+                        <ul className="space-y-1.5">
                           {item.achievements.map((ach, idx) => (
                             <li key={idx} className="flex items-start gap-2 text-zinc-600 text-[12px] leading-relaxed font-medium">
                               <span className="w-1.5 h-1.5 rounded-full bg-[#ED1C24] mt-1.5 flex-shrink-0" />
-                              <span>{ach}</span>
+                              <span className="line-clamp-2">{ach}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
 
                       {/* Footer bar */}
-                      <div className="flex items-center justify-between pt-6 mt-4 border-t border-zinc-100 flex-shrink-0">
+                      <div className="flex items-center justify-between pt-4 border-t border-zinc-100 flex-shrink-0 mt-auto">
                         <span className="text-zinc-400 text-[11px] font-bold tracking-wider uppercase">
                           {item.readTime}
                         </span>

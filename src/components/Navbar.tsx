@@ -77,7 +77,7 @@ export default function Navbar() {
               href="#"
               className="hidden lg:flex items-center bg-[#ED1C24] hover:bg-[#C8161D] text-white rounded-[6px] h-[38px] pl-5 pr-1.5 gap-2.5 transition-all hover:shadow-md active:scale-95 w-max uppercase"
             >
-              <span className="text-[11.5px] font-bold tracking-wider">PPDB</span>
+              <span className="text-[11.5px] font-bold tracking-wider">PPDB 2027</span>
               <span className="flex items-center justify-center w-6 h-6 bg-white rounded-[4px] text-[#ED1C24]">
                 <ArrowRight className="w-3.5 h-3.5 transform -rotate-45 stroke-[2.5]" />
               </span>
